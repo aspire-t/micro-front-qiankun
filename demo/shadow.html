@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+		<p>hello world</p>
+    <div id="shadow"></div>
+    <script>
+      let shadowDom = shadow.attachShadow({ mode: 'open' })
+      let pElement = document.createElement('p')
+			pElement.innerHTML = 'hello shadow'
+
+      let styleElement = document.createElement('style')
+      styleElement.textContent = `
+        p{color:red}
+			`
+
+      shadowDom.appendChild(pElement)
+			shadowDom.appendChild(styleElement)
+			// document.body.appendChild(pElement)
+    </script>
+  </body>
+</html>
