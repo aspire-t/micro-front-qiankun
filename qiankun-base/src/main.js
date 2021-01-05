@@ -14,27 +14,27 @@ const apps = [
     entry: '//localhost:10001',
     container: '#vue',
     activeRule: '/vue',
-    props: {
-      routerBase: '/vue',
-    },
+    // props: {
+    //   routerBase: '/vue',
+    // },
   },
   {
     name: 'reactApp',
     entry: '//localhost:20000',
     container: '#react',
     activeRule: '/react',
-    props: {
-      routerBase: '/react',
-    },
+    // props: {
+    //   routerBase: '/react',
+    // },
   },
   {
     name: 'staticApp',
     entry: '//localhost:10400',
     container: '#frame',
     activeRule: '/static',
-    props: {
-      routerBase: '/static',
-    },
+    // props: {
+    //   routerBase: '/static',
+    // },
   },
 ]
 

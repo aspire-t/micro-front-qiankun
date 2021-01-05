@@ -28,7 +28,6 @@ export default {
     initActions() {
       // 注册一个观察者函数
       actions.onGlobalStateChange((state, prevState) => {
-        console.log(111111111111)
         // state: 变更后的状态; prevState: 变更前的状态
         this.num = state.number
         console.log('主应用观察者：number 改变前的值为 ', prevState.number)
@@ -42,6 +41,7 @@ export default {
       let number = this.num + 1
       // 登录成功后，设置 token
       actions.setGlobalState({ number })
+      // this.$router.push('/vue')
     },
   },
 }

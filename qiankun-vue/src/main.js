@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import actions from './shared/actions'
 
 Vue.config.productionTip = false
 
 let instance = null
 
 function render(props = {}) {
+  if (props) {
+    // 注入 actions 实例
+    actions.setActions(props)
+  }
+
   instance = new Vue({
     router,
     render: (h) => h(App),
@@ -27,7 +33,11 @@ export async function bootstrap() {
 }
 
 export async function mount(props) {
-  render()
+  render(props)
+  // props.onGlobalStateChange((state, prev) => {
+  //   // state: 变更后的状态; prev 变更前的状态
+  //   console.log(state, prev)
+  // })
 }
 
 export async function unmount() {
