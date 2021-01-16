@@ -5,6 +5,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import { registerMicroApps, start } from 'qiankun'
 
+import shared from '@/shared'
+
 // Vue.config.productionTip = false
 Vue.use(ElementUI)
 
@@ -16,6 +18,7 @@ const apps = [
     activeRule: '/vue',
     props: {
       routerBase: '/vue',
+      shared,
     },
   },
   {
@@ -25,6 +28,7 @@ const apps = [
     activeRule: '/react',
     props: {
       routerBase: '/react',
+      shared,
     },
   },
   {
