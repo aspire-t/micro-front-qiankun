@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import SharedModule from '../share'
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      userInfo: {},
+    }
+  },
+  mounted() {
+    const shared = SharedModule.getShared()
+    const token = shared.getNumber()
+
+    this.getUserInfo(token)
+  },
+
+  methods: {
+    async getUserInfo(token) {
+      console.log(token)
+    },
+  },
 }
 </script>
