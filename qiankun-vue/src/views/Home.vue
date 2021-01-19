@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+    <strong>{{ number }}</strong>
   </div>
 </template>
 
@@ -12,18 +13,20 @@ export default {
   data() {
     return {
       userInfo: {},
+      number: 0,
     }
   },
   mounted() {
     const shared = SharedModule.getShared()
-    const token = shared.getNumber()
+    const propsNumber = shared.getNumber()
 
-    this.getUserInfo(token)
+    this.getNumberInfo(propsNumber)
   },
 
   methods: {
-    async getUserInfo(token) {
-      console.log(token)
+    async getNumberInfo(propsNumber) {
+      // console.log(token)
+      this.number = propsNumber
     },
   },
 }

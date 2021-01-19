@@ -31,15 +31,6 @@ const apps = [
       shared,
     },
   },
-  {
-    name: 'staticApp',
-    entry: '//localhost:10400',
-    container: '#frame',
-    activeRule: '/static',
-    props: {
-      routerBase: '/static',
-    },
-  },
 ]
 
 registerMicroApps(apps, {
